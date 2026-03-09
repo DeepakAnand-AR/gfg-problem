@@ -1,0 +1,29 @@
+import java.util.HashSet;
+import java.util.Scanner;
+public class WheatDatasetDuplicateCheck {
+public static int findDuplicateSample(int[] samples) {
+HashSet<Integer> set = new HashSet<>();
+for (int sample : samples) {
+if (set.contains(sample)) {
+return sample;
+   }
+set.add(sample);
+    }
+return -1;
+    }
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+System.out.print("Enter number of wheat leaf samples: ");
+int n = sc.nextInt();
+int[] samples = new int[n];
+System.out.println("Enter sample IDs:");
+for (int i = 0; i < n; i++) {
+samples[i] = sc.nextInt();
+ }
+int duplicate = findDuplicateSample(samples);
+if (duplicate != -1)
+            System.out.println("Duplicate Sample Found: " + duplicate);
+ else
+            System.out.println("No duplicate samples detected.");
+    }
+}
