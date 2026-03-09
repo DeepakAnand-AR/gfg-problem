@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class WheatLeafFeatureExpansion {
+public static int[] expandFeatureDataset(int[] features) {
+int n = features.length;
+int[] expanded = new int[n * 2];
+for (int i = 0; i < n; i++) {
+  expanded[i] = features[i];
+  expanded[i + n] = features[i];
+}
+return expanded;
+    }
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+System.out.print("Enter number of leaf features: ");
+int n = sc.nextInt();
+int[] features = new int[n];
+System.out.println("Enter wheat leaf feature values:");
+for (int i = 0; i < n; i++) {
+features[i] = sc.nextInt();
+        }
+int[] result = expandFeatureDataset(features);
+System.out.print("Expanded Feature Dataset: ");
+for (int value : result) {
+System.out.print(value + " ");
+        }
+    }
+}
