@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class WheatDiseasePatternCheck {
+public static boolean isDiseasePattern(String pattern, String observation) {
+int i = 0;
+int j = 0;
+while (i < pattern.length() && j < observation.length()) {
+ if (pattern.charAt(i) == observation.charAt(j)) {
+         i++;
+            }
+ j++;
+        }
+ return i == pattern.length();
+    }
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+System.out.print("Enter disease symptom pattern: ");
+String pattern = sc.nextLine();
+System.out.print("Enter observed wheat leaf data: ");
+String observation = sc.nextLine();
+if (isDiseasePattern(pattern, observation))
+            System.out.println("Disease pattern detected in wheat leaf.");
+        else
+            System.out.println("No disease pattern detected.");
+    }
+}
