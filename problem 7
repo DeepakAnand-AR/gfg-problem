@@ -1,0 +1,25 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class WheatDiseaseAnagramCheck {
+public static boolean checkDiseaseLabel(String label1, String label2) {
+if (label1.length() != label2.length()) {
+            return false;
+   }
+char[] a = label1.toCharArray();
+char[] b = label2.toCharArray();
+Arrays.sort(a);
+Arrays.sort(b);
+return Arrays.equals(a, b);
+    }
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+System.out.print("Enter first wheat disease label: ");
+String d1 = sc.nextLine();
+System.out.print("Enter second wheat disease label: ");
+String d2 = sc.nextLine();
+if (checkDiseaseLabel(d1, d2))
+System.out.println("Disease labels are similar (Anagram).");
+        else
+System.out.println("Disease labels are different.");
+    }
+}
