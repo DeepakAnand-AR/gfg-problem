@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class WheatLeafSeverityAnalysis {
+public static int[] updateSeverity(int[] severity) {
+int max = -1;
+for (int i = severity.length - 1; i >= 0; i--) {
+int temp = severity[i];
+severity[i] = max;
+if (temp > max) {
+ max = temp;
+            }
+        }
+return severity;
+    }
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+System.out.print("Enter number of wheat leaf samples: ");
+int n = sc.nextInt();
+int[] severity = new int[n];
+System.out.println("Enter disease severity values:");
+for (int i = 0; i < n; i++) {
+severity[i] = sc.nextInt();
+        }
+int[] result = updateSeverity(severity);
+System.out.print("Updated Severity Data: ");
+for (int val : result) {
+System.out.print(val + " ");
+        }
+    }
+}
